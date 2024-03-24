@@ -23,29 +23,52 @@
 			justify-content: center;
 			align-items: center;
 			height: 90vh;
-			flex-wrap: nowrap;
 		}
 	</style>
 	<body>
-		<div class="" id="container"></div>
+		<input
+			type="text"
+			id="chromosomesInput"
+			placeholder="Введите количество хромосом"
+		/>
+		<button id="seregaeblan">Проверить</button>
+		<div id="container"></div>
 	</body>
 </html>
 <script>
-	const a = prompt('Сколько хромосом у сереги')
 	const container = document.getElementById('container')
-	if (a == 52) {
-		const element = document.createElement('h1')
-		element.innerHTML = `
+	const input = document.getElementById('chromosomesInput')
+	const button = document.getElementById('seregaeblan')
 
-		Да здравствует 52
-		<br>
-    Да здравствует Петербург, да здравствует 52
-		
-		`
-		container.appendChild(element)
-	} else {
-		const element = document.createElement('h1')
-		element.innerHTML = 'иди нахуй даун'
-		container.appendChild(element)
-	}
+	button.addEventListener('click', function (event) {
+		event.preventDefault()
+
+		const chromosomesCount = parseInt(input.value)
+
+		if (chromosomesCount === 52) {
+			const element = document.createElement('h1')
+			element.innerHTML = `
+							Да здравствует 52
+							<br>
+							Да здравствует Петербург, да здравствует 52
+
+							<br>
+							<br>
+							<img src="b099f5540cd7.jpg" alt="52" />
+
+							<video width="512" height="512" controls autoplay>
+							<source src="ALBLAK 52 — +7(952)812.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+
+					`
+
+			container.appendChild(element)
+		} else {
+			const element = document.createElement('h1')
+			element.innerHTML = 'Иди нахуй, даун!'
+			container.appendChild(element)
+		}
+	})
 </script>
+
