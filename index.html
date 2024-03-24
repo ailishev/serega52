@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<style>
+		body {
+			background-color: #1a1a1a;
+			color: #fff;
+			font-family: Roboto, sans-serif;
+			font-size: 26px;
+		}
+		#container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 90vh;
+		}
+	</style>
+	<body>
+		<input
+			type="text"
+			id="chromosomesInput"
+			placeholder="Введите количество хромосом"
+		/>
+		<button id="seregaeblan">Проверить</button>
+		<div id="container"></div>
+	</body>
+</html>
+<script>
+	const container = document.getElementById('container')
+	const input = document.getElementById('chromosomesInput')
+	const button = document.getElementById('seregaeblan')
+
+	button.addEventListener('click', function (event) {
+		event.preventDefault()
+
+		const chromosomesCount = parseInt(input.value)
+
+		if (chromosomesCount === 52) {
+			const element = document.createElement('h1')
+			element.innerHTML = `
+							Да здравствует 52
+							<br>
+							Да здравствует Петербург, да здравствует 52
+
+							<br>
+							<br>
+							<img src="b099f5540cd7.jpg" alt="52" />
+
+							<video width="512" height="512" controls autoplay>
+  <source src="ALBLAK 52 — +7(952)812.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+					`
+
+			container.appendChild(element)
+		} else {
+			const element = document.createElement('h1')
+			element.innerHTML = 'Иди нахуй, даун!'
+			container.appendChild(element)
+		}
+	})
+</script>
